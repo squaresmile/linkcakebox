@@ -20,7 +20,7 @@ if(plugin.canChangeMenu())
             base_path = base_path + "/" + this.files[dID][fno].name;
 
         base_path = base_path.replace(plugin.dirpath, "");
-        var cakeboxUrl = "'" + plugin.url + "#/play/" + bugurl(encodeURIComponent(base_path)) + "'";
+        var cakeboxUrl = "'" + plugin.url + bugurl(encodeURIComponent(base_path)) + "'";
         return cakeboxUrl;
     }
   
@@ -69,7 +69,7 @@ if(plugin.canChangeMenu()) {
                 return url;
             }
 
-            var cakeboxUrl = "'" + plugin.url + "#/play/" + bugurl(encodeURIComponent(theWebUI.torrents[id].name)) + "'";
+            var cakeboxUrl = "'" + plugin.url + bugurl(encodeURIComponent(theWebUI.torrents[id].name)) + "'";
             theContextMenu.add( [theUILang.linkcakeboxmenu, (theWebUI.torrents[id].multi_file != 0 ) ? null : plugin.optionlink + "(" + cakeboxUrl + ")"] );
         }
     }
