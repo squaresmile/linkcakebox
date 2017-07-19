@@ -1,4 +1,4 @@
-theUILang.linkcakebox = "Watch your files with Cakebox";
-theUILang.linkcakeboxmenu = "Watch in Cakebox";
+theUILang.linkcakebox = "File listing";
+theUILang.linkcakeboxmenu = "Download file";
 
 thePlugins.get("linkcakebox").langLoaded();
