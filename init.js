@@ -1,4 +1,4 @@
-﻿plugin.loadLang();
+plugin.loadLang();
 
 if (theWebUI.theme && theWebUI.theme == 'Oblivion')
     plugin.loadCSS("linkcakeboxoblivion");
@@ -20,7 +20,7 @@ if(plugin.canChangeMenu())
             base_path = base_path + "/" + this.files[dID][fno].name;
 
         base_path = base_path.replace(plugin.dirpath, "");
-        var cakeboxUrl = "'" + plugin.url + bugurl(encodeURIComponent(base_path)) + "'";
+        var cakeboxUrl = "'" + plugin.url + base_path + "'";
         return cakeboxUrl;
     }
   
@@ -69,7 +69,12 @@ if(plugin.canChangeMenu()) {
                 return url;
             }
 
-            var cakeboxUrl = "'" + plugin.url + bugurl(encodeURIComponent(theWebUI.torrents[id].name)) + "'";
+        	var base_path = this.torrents[id].base_path;
+//      	if (this.files[id][fno].name != this.torrents[id].name)
+//          base_path = base_path + "/" + this.files[id][fno].name;
+        	base_path = base_path.replace(plugin.dirpath, "");
+        	var cakeboxUrl = "'" + plugin.url + base_path + "'";
+//          var cakeboxUrl = "'" + plugin.url + bugurl(encodeURIComponent(theWebUI.torrents[id].base_path)) + "'";
             theContextMenu.add( [theUILang.linkcakeboxmenu, (theWebUI.torrents[id].multi_file != 0 ) ? null : plugin.optionlink + "(" + cakeboxUrl + ")"] );
         }
     }
